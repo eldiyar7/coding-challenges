@@ -44,3 +44,18 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum([1, 2, 3], 4)); // returns [0,2]
+
+/**
+ * Find the missing term in an Arithmetic Progression.
+ */
+
+const findMissing = (list) => {
+  const term = (list[list.length - 1] - list[0]) / list.length;
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] + term != list[i + 1]) {
+      return list[i] + term;
+    }
+  }
+};
+
+console.log(findMissing([1, 3, 5, 9, 11])); // returns 7
